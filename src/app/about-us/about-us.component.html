@@ -1,0 +1,31 @@
+<div class="page-area">
+  <h4>About Us Page</h4>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <!-- <label for="exampleFormControlInput1" class="form-label">Search Product by Name</label> -->
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="search product by name.." [(ngModel)]="searchName">
+  </div>
+  <div class="col-md-8 mt-2">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product</th>
+          <th scope="col">Price</th>
+          <th scope="col">Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr let *ngFor="let product of products | filter: searchName ">
+          <th scope="row">{{product.srno}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <h5><span class="badge text-bg-success">{{product.availability}}</span></h5>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

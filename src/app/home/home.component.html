@@ -1,0 +1,9 @@
+<div>
+  <h4>Home Page</h4>
+  <h4>{{value | samplepipe:10 }}</h4>
+  <ul>
+    <li *ngFor="let name of names">
+      {{name | samplepipe: 8 }}
+    </li>
+  </ul>
+</div>
